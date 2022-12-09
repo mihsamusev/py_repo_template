@@ -1,0 +1,26 @@
+[project]
+name = "py-repo-template"
+version = "0.1.0"
+description = ""
+authors = [
+  {name = "A. Random Developer", email = "author@example.com" } # Optional
+]
+requires-python = ">=3.7"
+readme = "README.md"
+
+dependencies = [
+    "scikit-learn"
+]
+
+[project.optional-dependencies]
+dev = [
+    "flake8",
+    "black",
+    "isort",
+    "pre-commit"
+]
+test = [
+    "pytest",
+    "coverage"
+]
+
