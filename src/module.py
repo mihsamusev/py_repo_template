@@ -19,8 +19,7 @@ class Example:
 
 if __name__ == "__main__":
     data = {
-        "first": 13123,
-        "second": 3333,
+        "first": 13123,"second": 3333,
         "third": 33333,
         "fourth": 31351,
         "fifth": 31351,
