@@ -1,0 +1,6 @@
+pytest
+pre-commit
+coverage
+flake8
+black
+isort
