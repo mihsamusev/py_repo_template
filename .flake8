@@ -1,0 +1,6 @@
+[flake8]
+# ignore PEP errors
+extend-ignore = E231
+
+# exclude mentioned files
+exclude = __init__.py
