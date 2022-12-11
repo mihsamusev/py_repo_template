@@ -14,13 +14,13 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "flake8",
     "black",
     "isort",
-    "pre-commit"
+    "pre-commit",
+    "tox"
 ]
 test = [
+    "flake8",
     "pytest",
     "coverage"
 ]
-
