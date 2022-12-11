@@ -1,6 +1,5 @@
+from dataclasses import dataclass, field
 from typing import Dict
-from dataclasses import dataclass
-from dataclasses import field
 
 
 @dataclass
@@ -15,11 +14,10 @@ class Example:
 
     def get_content(self, key: str):
         return self.content.get(key)
-
-
 if __name__ == "__main__":
     data = {
-        "first": 13123,"second": 3333,
+        "first": 13123,
+        "second": 3333,
         "third": 33333,
         "fourth": 31351,
         "fifth": 31351,
