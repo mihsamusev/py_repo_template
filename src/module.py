@@ -14,6 +14,8 @@ class Example:
 
     def get_content(self, key: str):
         return self.content.get(key)
+
+
 if __name__ == "__main__":
     data = {
         "first": 13123,
