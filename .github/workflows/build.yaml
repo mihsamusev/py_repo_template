@@ -4,12 +4,13 @@ on:
   - push
   - pull_request
 
-jobs:
+jobs:          
   build:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
+        os: [windows-latest, ubuntu-latest]
         python-version: ['3.9', '3.10']
+    runs-on: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v3
