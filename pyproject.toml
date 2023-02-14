@@ -26,5 +26,5 @@ dev = [
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-packages = ["goodstuff"]
+[tool.setuptools.packages.find]
+exclude = ["tests"]
