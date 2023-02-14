@@ -1,5 +1,5 @@
 [project]
-name = "py-repo-template"
+name = "goodstuff"
 version = "0.1.0"
 description = ""
 authors = [
@@ -15,10 +15,16 @@ dev = [
     "black",
     "isort",
     "pre-commit",
-    "tox"
-]
-test = [
+    "tox",
+    "tox-gh-actions",
     "flake8",
     "pytest",
     "coverage"
 ]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["goodstuff"]

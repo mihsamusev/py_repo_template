@@ -1,6 +1,6 @@
 [flake8]
-# ignore PEP errors
-extend-ignore = E231
+#same as black
+max-line-length = 88
 
 # exclude mentioned files
 exclude = __init__.py

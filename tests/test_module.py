@@ -1,4 +1,4 @@
-from src import module
+from goodstuff import module
 
 
 def test_module():
