@@ -4,7 +4,6 @@ on:
   workflow_run:
     workflows: ["test"]
     branches: ["main"]
-    tags: ["v*.*.*"]
     types: [completed]
 
 jobs:
