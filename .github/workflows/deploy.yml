@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: My Step
-        run: echo "My pipeline was triggered by a successful pull request merge."
+        run: echo "My successful e."
