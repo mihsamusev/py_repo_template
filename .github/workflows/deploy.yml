@@ -1,19 +1,15 @@
-name: deploy on merge to main
+name: My Workflow
 
 on:
-  push:
+  pull_request:
+    branches: [main]
+    types: [closed]
+
 
 jobs:
-  deploy:
+  my-job:
+    if: ${{ github.event.pull_request.merged == true }} 
     runs-on: ubuntu-latest
-    extends: ./build.yml#jobs.build
     steps:
-      - name: save build folder as an artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
-      - name: Deploy to production
-        run: |
-          echo "Deploying following to production..."
-          du -lah build
+      - name: My Step
+        run: echo "My pipeline was triggered by a successful pull request merge."
