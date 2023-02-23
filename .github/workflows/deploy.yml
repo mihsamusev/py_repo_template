@@ -1,24 +1,18 @@
 name: deploy on merge to main
 
 on:
-  workflow_run:
-    workflows: ["test"]
-    branches: ["main"]
-    types: [completed]
+  push:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
-    
+    extends: ./build.yml#jobs.build
     steps:
-      - name: download build folder artifact
+      - name: save build folder as an artifact
         uses: actions/download-artifact@v2
         with:
           name: build
           path: build
-
       - name: Deploy to production
         run: |
           echo "Deploying following to production..."
