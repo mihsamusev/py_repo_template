@@ -19,3 +19,6 @@ python -c "from goodstuff.module import Example"
 
 ## How about caching with poetry?
 https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
+
+## TODOS:
+add caching
