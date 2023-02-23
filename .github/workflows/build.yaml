@@ -1,8 +1,10 @@
-name: Python package
+name: test on every branch
 
 on:
-  - push
-  - pull_request
+  push:
+    paths-ignore: ["*.md"]
+  pull_request:
+    branches: [main]
 
 jobs:          
   build:
