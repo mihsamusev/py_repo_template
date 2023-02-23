@@ -1,4 +1,4 @@
-name: test on every branch
+name: test
 
 on:
   push:
