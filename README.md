@@ -21,5 +21,5 @@ python -c "from goodstuff.module import Example"
 https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
 
 ## TODOS:
-- [ ] example single developer worflow vs multiple developer workflow
+- [ ] examples of single branch development vs multiple branch development with CI
 - [ ] add caching
