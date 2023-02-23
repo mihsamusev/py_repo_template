@@ -1,0 +1,13 @@
+on:
+  pull_request:
+    branch: [main]
+    types: [closed]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == 'true'
+    steps:
+      - name: Deploy to production
+        run: |
+          echo "Deploying to production..."
