@@ -23,3 +23,4 @@ https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching
 ## TODOS:
 - [ ] examples of single branch development vs multiple branch development with CI
 - [ ] add caching
+- [ ] can extract names of tags like `release/<name>`
