@@ -19,7 +19,7 @@ jobs:
     - name: run welcome bash script
       shell: bash
       run: |
-        echo "Welcome to branch ${{ env.BRANCH_NAME }}
+        echo "Welcome to branch ${{ env.BRANCH_NAME }}"
         chmod +x ./scripts/welcome.sh
         ./scripts/welcome.sh ${{ matrix.name }}
         cat ./scripts/config.${{ matrix.name }}.json
