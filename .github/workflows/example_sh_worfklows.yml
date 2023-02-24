@@ -20,7 +20,7 @@ jobs:
 
     - name: run welcome bash script
       env:
-        NAME_LOWERCASE: $( echo ${{ matrix.name }} | awk 'print tolower($0)')
+        NAME_LOWERCASE: $( echo ${{ matrix.name }} | awk '{print tolower($0)}')
       shell: bash
       run: |
         echo "Branch: ${{ env.BRANCH_NAME }}, ${{ env.BRANCH_NAME_LAST_LOWER }}, ${{ env.BRANCH_NAME_LAST_UPPER }}"
