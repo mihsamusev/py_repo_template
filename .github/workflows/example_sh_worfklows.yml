@@ -19,12 +19,14 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: run welcome bash script
+      env:
+        NAME_LOWERCASE: $( echo ${{ matrix.name }} | awk 'print tolower($0)')
       shell: bash
       run: |
         echo "Branch: ${{ env.BRANCH_NAME }}, ${{ env.BRANCH_NAME_LAST_LOWER }}, ${{ env.BRANCH_NAME_LAST_UPPER }}"
         chmod +x ./scripts/welcome.sh
         ./scripts/welcome.sh ${{ matrix.name }}
-        cat ./scripts/config.${{ matrix.name }}.json
+        cat ./scripts/config.${{ env.NAME_LOWERCASE }}.json
 
 
     - name: get variable parametrically
