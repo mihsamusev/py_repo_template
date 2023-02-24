@@ -5,7 +5,7 @@ on:
 
 env:
   BRANCH_NAME: ${{ github.ref_name }}
-  BRANCH_NAME_LAST: $(echo ${{ github.ref_name}} | awk -F'/' 'print $1')
+  BRANCH_NAME_LAST: $(echo ${{ github.ref_name}} | awk -F'/' '{print $1}')
 
 jobs:          
   call_bash:
