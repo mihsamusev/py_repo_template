@@ -5,8 +5,8 @@ on:
 
 env:
   BRANCH_NAME: ${{ github.ref_name }}
-  BRANCH_NAME_LAST: $(echo ${{ github.ref_name}} | awk -F'/' '{print $2}')
-
+  BRANCH_NAME_LAST_LOWER: $(echo ${{ github.ref_name}} | awk -F'/' '{print tolower($2)}')
+  BRANCH_NAME_LAST_UPPER: $(echo ${{ github.ref_name}} | awk -F'/' '{print toupper($2)}')
 jobs:          
   call_bash:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
     - name: run welcome bash script
       shell: bash
       run: |
-        echo "Welcome to branch ${{ env.BRANCH_NAME_LAST }}"
+        echo "Branch: ${{ env.BRANCH_NAME }}, ${{ env.BRANCH_NAME_LAST_LOWER }}, ${{ env.BRANCH_NAME_LAST_UPPER }}"
         chmod +x ./scripts/welcome.sh
         ./scripts/welcome.sh ${{ matrix.name }}
         cat ./scripts/config.${{ matrix.name }}.json
