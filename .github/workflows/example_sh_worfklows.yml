@@ -6,7 +6,7 @@ on:
 env:
   FROM_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
   TO_BRANCH_NAME: ${{ github.event.pull_request.base.ref }}
-
+  TO_BRANCH_NAME_COPY: $TO_BRANCH_NAME
 
 jobs:          
   call_bash:
