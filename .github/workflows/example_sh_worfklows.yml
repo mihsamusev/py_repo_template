@@ -6,8 +6,8 @@ on:
 env:
   FROM_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
   TO_BRANCH_NAME: ${{ github.event.pull_request.base.ref }}
-  FROM_BRANCH_LAST_LOWER: $(echo $FROM_BRANCH_NAME | awk -F'/' '{print tolower($2)}')
-  TO_BRANCH_LAST_UPPER: $(echo $TO_BRANCH_NAME | awk -F'/' '{print toupper($2)}')
+  FROM_BRANCH_LAST_LOWER: $(echo "$FROM_BRANCH_NAME" | awk -F'/' '{print tolower($2)}')
+  TO_BRANCH_LAST_UPPER: $(echo "$TO_BRANCH_NAME" | awk -F'/' '{print toupper($2)}')
 
 jobs:          
   call_bash:
