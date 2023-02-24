@@ -3,7 +3,7 @@ name: test
 on:
   pull_request:
     branches: [main] # targets
-    types: [opened, synchronize]
+    types: [opened, synchronize, reopened] # default
 
 jobs:          
   build:
