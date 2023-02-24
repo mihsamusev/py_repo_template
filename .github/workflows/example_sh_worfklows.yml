@@ -15,4 +15,7 @@ jobs:
 
     - name: run welcome bash script
       shell: bash
-      run: ./scripts/welcome.sh ${{ matrix.name }}
+      run: |
+        chmod +x ./scripts/welcome.sh
+        ./scripts/welcome.sh ${{ matrix.name }}
+        cat ./scripts/config.${{ matrix.name }}.json
