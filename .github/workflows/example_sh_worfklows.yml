@@ -21,8 +21,8 @@ jobs:
     - name: run welcome bash script
       env:
         NAME_LOWERCASE: $( echo ${{ matrix.name }} | awk '{print tolower($0)}')
-        FROM_BRANCH_LAST_LOWER: echo $FROM_BRANCH_NAME | awk -F'/' '{print tolower($2)}'
-        TO_BRANCH_LAST_UPPER: echo $TO_BRANCH_NAME | awk -F'/' '{print toupper($2)}'
+        FROM_BRANCH_LAST_LOWER: $( echo $FROM_BRANCH_NAME | awk -F'/' '{print tolower($2)}')
+        TO_BRANCH_LAST_UPPER: $( echo $TO_BRANCH_NAME | awk -F'/' '{print toupper($2)}')
       shell: bash
       run: |
         echo "from: $FROM_BRANCH_NAME, to: $TO_BRANCH_NAME config: $TO_BRANCH_LAST_UPPER"
