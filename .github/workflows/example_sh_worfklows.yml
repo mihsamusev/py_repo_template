@@ -5,8 +5,8 @@ on:
 
 env:
   BRANCH_NAME: ${{ github.ref_name }}
-  BRANCH_NAME_LAST_LOWER: $(echo ${{ env.BRANCH_NAME }} | awk -F'/' '{print tolower($2)}')
-  BRANCH_NAME_LAST_UPPER: $(echo ${{ env.BRANCH_NAME }} | awk -F'/' '{print toupper($2)}')
+  BRANCH_NAME_LAST_LOWER: $(echo ${{ github.ref_name }} | awk -F'/' '{print tolower($2)}')
+  BRANCH_NAME_LAST_UPPER: $(echo ${{ github.ref_name }} | awk -F'/' '{print toupper($2)}')
 
 jobs:          
   call_bash:
