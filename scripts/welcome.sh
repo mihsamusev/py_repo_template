@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Wwelcome $1"
+echo "Wwwelcome $1"
