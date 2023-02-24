@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hi welcomecomee $1"
+echo "Hi welcomecomeee $1"
