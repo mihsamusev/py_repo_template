@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        name: [alice, bob]
+        name: [ALICE, BOB]
 
     steps:
     - uses: actions/checkout@v3
@@ -25,3 +25,11 @@ jobs:
         chmod +x ./scripts/welcome.sh
         ./scripts/welcome.sh ${{ matrix.name }}
         cat ./scripts/config.${{ matrix.name }}.json
+
+
+    - name: get variable parametrically
+      env:
+        KEY: AZURE_${{ matrix.name }}_API_ID
+      run: |
+        echo ${{ matrix.name}} ID is ${{ vars[env.KEY] }}
+
