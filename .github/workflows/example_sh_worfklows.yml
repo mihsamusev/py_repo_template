@@ -15,4 +15,4 @@ jobs:
 
     - name: run welcome bash script
       shell: bash
-      run: ./welcome.sh ${{ matrix.name }}
+      run: ./scripts/welcome.sh ${{ matrix.name }}
