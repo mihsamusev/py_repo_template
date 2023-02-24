@@ -11,9 +11,6 @@ env:
 jobs:          
   call_bash:
     runs-on: ubuntu-latest
-    env:
-      FROM_BRANCH_LAST_LOWER: $(echo ${{ env.FROM_BRANCH_NAME }} | awk -F'/' '{print tolower($2)}')
-      TO_BRANCH_LAST_UPPER: $(echo ${{ env.TO_BRANCH_NAME }} | awk -F'/' '{print toupper($2)}')
     strategy:
       matrix:
         name: [ALICE, BOB]
@@ -23,6 +20,8 @@ jobs:
 
     - name: run welcome bash script
       env:
+        FROM_BRANCH_LAST_LOWER: $(echo ${{ env.FROM_BRANCH_NAME }} | awk -F'/' '{print tolower($2)}')
+        TO_BRANCH_LAST_UPPER: $(echo ${{ env.TO_BRANCH_NAME }} | awk -F'/' '{print toupper($2)}')
         NAME_LOWERCASE: $( echo ${{ matrix.name }} | awk '{print tolower($0)}')
       shell: bash
       run: |
