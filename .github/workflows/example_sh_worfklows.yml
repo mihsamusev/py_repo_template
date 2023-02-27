@@ -6,8 +6,7 @@ on:
 env:
   FROM_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
   TO_BRANCH_NAME: ${{ github.event.pull_request.base.ref }}
-  FROM_BRANCH_LAST_LOWER: $(echo $FROM_BRANCH_NAME | awk -F'/' '{print tolower($2)}')
-  TO_BRANCH_LAST_UPPER: $(echo $TO_BRANCH_NAME | awk -F'/' '{print toupper($2)}')
+
 
 jobs:          
   call_bash:
@@ -22,9 +21,11 @@ jobs:
     - name: run welcome bash script
       env:
         NAME_LOWERCASE: $( echo ${{ matrix.name }} | awk '{print tolower($0)}')
+        FROM_BRANCH_LAST_LOWER: $( echo ${{ env.FROM_BRANCH_NAME }} | awk -F'/' '{print tolower($2)}')
+        TO_BRANCH_LAST_UPPER: $( echo ${{ env.TO_BRANCH_NAME }} | awk -F'/' '{print toupper($2)}')
       shell: bash
       run: |
-        echo "from: $FROM_BRANCH_NAME, to: $TO_BRANCH_NAME config: $TO_BRANCH_LAST_UPPER"
+        echo "from: $FROM_BRANCH_NAME, to: $TO_BRANCH_NAME config: ${{ env.TO_BRANCH_LAST_UPPER }}"
         chmod +x ./scripts/welcome.sh
         ./scripts/welcome.sh ${{ matrix.name }}
         cat ./scripts/config.${{ env.NAME_LOWERCASE }}.json
